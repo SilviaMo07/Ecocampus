@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f8f4">
+    <meta
+      name="description"
+      content="EcoCampus te ayuda a decidir cómo separar residuos comunes y electrónicos."
+    >
+    <title>EcoCampus — Resuelve tus dudas sobre residuos</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="EcoCampus, inicio">
+          <span class="brand-mark" aria-hidden="true">e</span>
+          <span>Eco<span class="brand-accent">Campus</span></span>
+        </a>
+        <nav class="topbar-nav" aria-label="Navegación principal">
+          <a class="questionnaire-link" href="cuestionario.html">Cuestionario</a>
+          <span class="topbar-label"><span class="status-dot"></span> Guía de residuos del campus</span>
+        </nav>
+      </header>
+
+      <section class="layout" aria-label="Chatbot EcoCampus">
+        <aside class="intro-panel">
+          <p class="eyebrow">PEQUEÑAS ACCIONES, GRAN CAMBIO</p>
+          <h1>¿Dónde va<br>cada residuo?</h1>
+          <p class="intro-copy">
+            Pregúntale a EcoCampus cómo separar residuos comunes y descubre
+            hábitos sencillos para cuidar tu entorno.
+          </p>
+
+          <div class="impact-card">
+            <span class="impact-icon" aria-hidden="true">♻</span>
+            <div>
+              <strong>Una duda menos</strong>
+              <p>Separar bien empieza por saber dónde va cada cosa.</p>
+            </div>
+          </div>
+
+          <div class="tip-card">
+            <span class="tip-label">CONSEJO RÁPIDO</span>
+            <p>Si un envase tiene restos de comida, vacíalo antes de reciclarlo.</p>
+          </div>
+
+          <p class="fine-print">
+            Las reglas de reciclaje cambian según la localidad. Confirma siempre
+            los colores y puntos de acopio de tu campus.
+          </p>
+        </aside>
+
+        <section class="chat-panel" aria-label="Conversación con EcoCampus">
+          <div class="chat-heading">
+            <div class="bot-avatar" aria-hidden="true">🌱</div>
+            <div class="bot-info">
+              <h2>EcoCampus</h2>
+              <p><span class="status-dot"></span> En línea · listo para ayudarte</p>
+            </div>
+            <button class="reset-button" id="reset-chat" type="button" aria-label="Reiniciar conversación" title="Reiniciar conversación">
+              ↻
+            </button>
+          </div>
+
+          <div class="conversation" id="conversation" aria-live="polite" aria-relevant="additions text">
+            <div class="message-row bot-row">
+              <div class="message-avatar" aria-hidden="true">🌱</div>
+              <div class="message-content">
+                <p class="message-bubble">
+                  ¡Hola! Soy EcoCampus. Te ayudo a separar tus residuos y a encontrar opciones más sostenibles. ¿Qué quieres desechar?
+                </p>
+                <span class="message-time">Ahora</span>
+              </div>
+            </div>
+            <div class="suggestions" id="suggestions" aria-label="Preguntas sugeridas">
+              <button class="suggestion" type="button" data-prompt="¿Dónde tiro una botella de plástico?">🧴 Botella de plástico</button>
+              <button class="suggestion" type="button" data-prompt="¿Qué hago con restos de comida?">🍌 Restos de comida</button>
+              <button class="suggestion" type="button" data-prompt="¿Dónde llevo pilas usadas?">🔋 Pilas usadas</button>
+            </div>
+          </div>
+
+          <form class="composer" id="chat-form">
+            <label class="sr-only" for="message-input">Escribe tu pregunta</label>
+            <input
+              id="message-input"
+              name="message"
+              type="text"
+              placeholder="Escribe tu pregunta aquí..."
+              autocomplete="off"
+              maxlength="300"
+              required
+            >
+            <button class="send-button" type="submit">
+              <span>Enviar</span><span aria-hidden="true">↗</span>
+            </button>
+          </form>
+          <p class="chat-disclaimer">EcoCampus ofrece orientación general. Verifica las normas locales.</p>
+        </section>
+      </section>
+
+      <footer class="footer">
+        <span>Hecho para un campus con menos residuos.</span>
+        <span>♻ Reducir · Reutilizar · Reciclar</span>
+      </footer>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f8f4">
+    <meta
+      name="description"
+      content="Cuestionario de conocimientos y reflexión sobre el chatbot EcoCampus."
+    >
+    <title>Cuestionario — EcoCampus</title>
+    <link rel="stylesheet" href="cuestionario.css">
+    <script src="cuestionario.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="page-header">
+        <a class="back-link" href="index.html">← Volver a EcoCampus</a>
+        <span class="version-label">EVALUACIÓN DEL PROYECTO · VERSIÓN 1.0</span>
+      </header>
+
+      <section class="intro">
+        <p class="eyebrow">CUESTIONARIO Y AUTOEVALUACIÓN</p>
+        <h1>Conoce cómo funciona<br>EcoCampus</h1>
+        <p>
+          Responde las preguntas de selección múltiple y completa la reflexión
+          sobre tu participación. Al enviar, verás tu puntaje y la clave de respuestas.
+        </p>
+      </section>
+
+      <form id="assessment-form">
+        <section class="form-section" aria-labelledby="knowledge-title">
+          <div class="section-heading">
+            <span class="section-number">01</span>
+            <div>
+              <h2 id="knowledge-title">Conocimientos del chatbot</h2>
+              <p>15 preguntas · selecciona una sola respuesta por pregunta.</p>
+            </div>
+          </div>
+          <div id="questions"></div>
+        </section>
+
+        <section class="form-section" aria-labelledby="rating-title">
+          <div class="section-heading">
+            <span class="section-number">02</span>
+            <div>
+              <h2 id="rating-title">Autoevaluación</h2>
+              <p>Valora tu participación en el proyecto con una opción por aspecto.</p>
+            </div>
+          </div>
+          <div class="scale-guide" aria-label="Escala de valoración">
+            <span><b>1</b> Necesito mejorar</span>
+            <span><b>2</b> En proceso</span>
+            <span><b>3</b> Adecuado</span>
+            <span><b>4</b> Muy bien</span>
+            <span><b>5</b> Sobresaliente</span>
+          </div>
+          <div id="ratings"></div>
+          <p class="individual-note">
+            Si trabajaste individualmente, valora cómo coordinaste tus distintas
+            funciones y cómo aprovechaste las herramientas de apoyo.
+          </p>
+        </section>
+
+        <section class="form-section" aria-labelledby="reflection-title">
+          <div class="section-heading">
+            <span class="section-number">03</span>
+            <div>
+              <h2 id="reflection-title">Desarrollo reflexivo</h2>
+              <p>Responde con ejemplos concretos y honestos.</p>
+            </div>
+          </div>
+          <label class="field-label" for="reflection-role">
+            ¿Qué rol o roles asumiste en EcoCampus y cuáles fueron tus responsabilidades?
+          </label>
+          <textarea id="reflection-role" name="reflection-role" rows="3" maxlength="1000" required></textarea>
+
+          <label class="field-label" for="reflection-contribution">
+            ¿Cuál fue tu aporte más importante al chatbot y qué evidencia lo demuestra?
+          </label>
+          <textarea id="reflection-contribution" name="reflection-contribution" rows="3" maxlength="1000" required></textarea>
+
+          <label class="field-label" for="reflection-challenge">
+            ¿Qué dificultad o desacuerdo enfrentaste y cómo lo resolviste? Si no hubo
+            conflictos, explica cómo tomaste decisiones ante distintas opciones.
+          </label>
+          <textarea id="reflection-challenge" name="reflection-challenge" rows="3" maxlength="1000" required></textarea>
+
+          <label class="field-label" for="reflection-learning">
+            ¿Cómo organizaste el tiempo y qué mejorarías después de probar EcoCampus?
+          </label>
+          <textarea id="reflection-learning" name="reflection-learning" rows="3" maxlength="1000" required></textarea>
+        </section>
+
+        <section class="form-section identification-section" aria-label="Identificación">
+          <label class="field-label" for="student-name">Nombre</label>
+          <input id="student-name" name="student-name" type="text" value="Silvia Mora" maxlength="100">
+          <p class="privacy-note">
+            El formulario se procesa en este navegador: no envía ni guarda tus respuestas
+            en un servidor. Imprime el resultado si necesitas conservarlo.
+          </p>
+        </section>
+
+        <div class="form-actions">
+          <button class="primary-button" type="submit">Revisar respuestas</button>
+          <button class="secondary-button" type="reset">Limpiar formulario</button>
+        </div>
+      </form>
+
+      <section class="results" id="results" aria-live="polite" hidden>
+        <div class="result-header">
+          <div>
+            <p class="eyebrow">RESULTADO</p>
+            <h2 id="result-title"></h2>
+            <p id="result-summary"></p>
+          </div>
+          <button class="secondary-button print-button" id="print-results" type="button">Imprimir</button>
+        </div>
+        <div id="answer-review"></div>
+      </section>
+
+      <footer class="page-footer">
+        <span>EcoCampus · Orientación general sobre residuos</span>
+        <a href="index.html">Regresar al chatbot</a>
+      </footer>
+    </main>
+  </body>
+</html>
